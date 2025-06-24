@@ -47,25 +47,18 @@
       text-align: center;
     }
 
-    .iframe-container {
+    iframe {
       width: 100%;
-      height: 333px; /* 2/3 dari tinggi sebelumnya */
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .iframe-container iframe {
-      width: 100%;
-      height: 100%;
       border: none;
+      border-radius: 8px;
     }
 
     iframe.liker {
       height: 150px;
-      border: none;
-      border-radius: 8px;
-      width: 100%;
+    }
+
+    iframe.chat {
+      height: 500px;
     }
 
     @media screen and (max-width: 768px) {
@@ -100,9 +93,7 @@
   <div class="row">
     <div class="box box-full">
       <h2>Chat Akun Mai Honda</h2>
-      <div class="iframe-container">
-        <iframe src="https://tikfinity.zerody.one/widget/chat?cid=1434659"></iframe>
-      </div>
+      <iframe class="chat" src="https://tikfinity.zerody.one/widget/chat?cid=1434659"></iframe>
     </div>
   </div>
 
@@ -110,9 +101,7 @@
   <div class="row">
     <div class="box box-full">
       <h2>Chat Akun Joksan</h2>
-      <div class="iframe-container">
-        <iframe src="https://tikfinity.zerody.one/widget/chat?cid=1158294"></iframe>
-      </div>
+      <iframe class="chat" src="https://tikfinity.zerody.one/widget/chat?cid=1158294"></iframe>
     </div>
   </div>
 
