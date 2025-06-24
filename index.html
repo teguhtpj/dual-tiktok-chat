@@ -42,27 +42,35 @@
       text-align: center;
     }
 
-    iframe {
+    iframe.chat {
       width: 100%;
       height: 500px;
       border: none;
       border-radius: 8px;
     }
+
+    iframe.topliker {
+      width: 100%;
+      height: 150px; /* Disesuaikan agar hanya 3 top liker terlihat */
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Live Chat dan Top Liker Akun TikTok</h1>
+  <h1>Live Chat dan Top 3 Liker Akun TikTok</h1>
 
   <!-- Akun TikTok #1 -->
   <div class="row">
     <div class="box">
       <h2>Chat Akun Mai Honda</h2>
-      <iframe src="https://tikfinity.zerody.one/widget/chat?cid=1434659"></iframe>
+      <iframe class="chat" src="https://tikfinity.zerody.one/widget/chat?cid=1434659"></iframe>
     </div>
     <div class="box">
-      <h2>Top Liker Akun Mai Honda</h2>
-      <iframe src="https://tikfinity.zerody.one/widget/topliker?cid=1434659"></iframe>
+      <h2>Top 3 Liker Akun Mai Honda</h2>
+      <iframe class="topliker" src="https://tikfinity.zerody.one/widget/topliker?cid=1434659"></iframe>
     </div>
   </div>
 
@@ -70,11 +78,11 @@
   <div class="row">
     <div class="box">
       <h2>Chat Akun Joksan</h2>
-      <iframe src="https://tikfinity.zerody.one/widget/chat?cid=1158294"></iframe>
+      <iframe class="chat" src="https://tikfinity.zerody.one/widget/chat?cid=1158294"></iframe>
     </div>
     <div class="box">
-      <h2>Top Liker Akun Joksan</h2>
-      <iframe src="https://tikfinity.zerody.one/widget/topliker?cid=1158294"></iframe>
+      <h2>Top 3 Liker Akun Joksan</h2>
+      <iframe class="topliker" src="https://tikfinity.zerody.one/widget/topliker?cid=1158294"></iframe>
     </div>
   </div>
 
