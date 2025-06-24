@@ -2,8 +2,12 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Live Chat dan Top Liker TikTok</title>
+  <title>Live Chat dan Top 3 Liker TikTok</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
@@ -13,62 +17,67 @@
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 100%;
     }
 
     .row {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
 
     .box {
       background-color: #fff;
       border: 2px solid #ccc;
       border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 500px;
+      padding: 10px;
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      height: 180px; /* Tinggi kotak top liker */
     }
 
-    .box-full {
-      width: 100%;
-      max-width: 1040px;
+    .chat-box {
+      height: 300px; /* Tinggi kotak chat */
     }
 
     .box h2 {
-      margin-top: 0;
-      font-size: 1.1em;
-      margin-bottom: 10px;
-      color: #333;
       text-align: center;
+      font-size: 1em;
+      margin: 5px 0 10px;
+    }
+
+    .iframe-wrapper {
+      flex-grow: 1;
+      overflow: hidden;
+      border-radius: 8px;
+      border: none;
     }
 
     iframe {
       width: 100%;
+      height: 100%;
       border: none;
       border-radius: 8px;
     }
 
-    iframe.liker {
-      height: 150px;
+    .scrollable-chat {
+      overflow: auto;
+      height: 100%;
     }
 
-    iframe.chat {
-      height: 500px;
-    }
-
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       .row {
         flex-direction: column;
-        align-items: center;
-      }
-
-      .box, .box-full {
-        max-width: 100%;
       }
     }
   </style>
@@ -77,32 +86,40 @@
 
   <h1>Live Chat dan Top 3 Liker Akun TikTok</h1>
 
-  <!-- Baris 1: Top Liker Dua Akun -->
-  <div class="row">
-    <div class="box">
-      <h2>Top 3 Liker Akun Mai Honda</h2>
-      <iframe class="liker" src="https://tikfinity.zerody.one/widget/topliker?cid=1434659"></iframe>
+  <div class="container">
+    
+    <!-- Baris 1: Top Liker -->
+    <div class="row">
+      <div class="box">
+        <h2>Top Liker Mai Honda</h2>
+        <div class="iframe-wrapper">
+          <iframe src="https://tikfinity.zerody.one/widget/topliker?cid=1434659"></iframe>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Top Liker Joksan</h2>
+        <div class="iframe-wrapper">
+          <iframe src="https://tikfinity.zerody.one/widget/topliker?cid=1158294"></iframe>
+        </div>
+      </div>
     </div>
-    <div class="box">
-      <h2>Top 3 Liker Akun Joksan</h2>
-      <iframe class="liker" src="https://tikfinity.zerody.one/widget/topliker?cid=1158294"></iframe>
-    </div>
-  </div>
 
-  <!-- Baris 2: Chat Mai Honda -->
-  <div class="row">
-    <div class="box box-full">
-      <h2>Chat Akun Mai Honda</h2>
-      <iframe class="chat" src="https://tikfinity.zerody.one/widget/chat?cid=1434659"></iframe>
+    <!-- Baris 2: Chat -->
+    <div class="row">
+      <div class="box chat-box">
+        <h2>Chat Mai Honda</h2>
+        <div class="scrollable-chat">
+          <iframe src="https://tikfinity.zerody.one/widget/chat?cid=1434659"></iframe>
+        </div>
+      </div>
+      <div class="box chat-box">
+        <h2>Chat Joksan</h2>
+        <div class="scrollable-chat">
+          <iframe src="https://tikfinity.zerody.one/widget/chat?cid=1158294"></iframe>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Baris 3: Chat Joksan -->
-  <div class="row">
-    <div class="box box-full">
-      <h2>Chat Akun Joksan</h2>
-      <iframe class="chat" src="https://tikfinity.zerody.one/widget/chat?cid=1158294"></iframe>
-    </div>
   </div>
 
 </body>
